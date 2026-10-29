@@ -1,5 +1,5 @@
 # Smart Bridge — Olympics Dashboard
-
+link app : https://olymipc-medal-distri.onrender.com/
 A responsive Flask web application that embeds the **Olympics Dashboard** published on Tableau Public. The application provides a landing page, a dedicated interactive dashboard page, a Tableau Story page, and links to the Tableau Public profile and original views.
 
 > **Important:** This application hosts the website, not the Tableau workbook itself. Embedded Tableau Public views are loaded from Tableau's servers and require an internet connection. A separately published Tableau Story URL must be configured before the Story page can embed it.
@@ -109,15 +109,6 @@ Set the value to your real Tableau Public Story link. If it is not configured, `
 python app.py
 ```
 
-Open these pages in your browser:
-
-- Home: http://127.0.0.1:5000/
-- Dashboard: http://127.0.0.1:5000/dashboard
-- Story: http://127.0.0.1:5000/story
-- Health check: http://127.0.0.1:5000/health
-
-Stop the server with `Ctrl+C`.
-
 ## Deploy to Render.com
 
 ### 1. Push the project to GitHub
@@ -151,7 +142,6 @@ In the Render service's Environment settings, add:
 | Key | Value |
 | --- | --- |
 | `TABLEAU_DASHBOARD_URL` | `https://public.tableau.com/views/smartbridge_17932641696630/OlympicDashboard` |
-| `TABLEAU_STORY_URL` | Your published Tableau Story URL (optional until available) |
 | `TABLEAU_PROFILE_URL` | `https://public.tableau.com/app/profile/aarna.vyas` |
 
 ### 4. Deploy
