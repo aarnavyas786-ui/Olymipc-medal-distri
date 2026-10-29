@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Overview | Olympics Dashboard{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">DATA · SPORT · HISTORY</span>
+    <h1>Explore the story<br><span>of the Olympics.</span></h1>
+    <p>An interactive view of Olympic data, brought together in a clean, easy-to-explore web experience.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ url_for('dashboard') }}">Explore dashboard <span>→</span></a>
+      <a class="button button-secondary" href="{{ url_for('story') }}">View story</a>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="ring ring-blue"></div><div class="ring ring-yellow"></div>
+    <div class="ring ring-black"></div><div class="ring ring-green"></div><div class="ring ring-red"></div>
+    <div class="art-caption">A global sporting legacy<br><strong>through data</strong></div>
+  </div>
+</section>
+<section class="section intro-section">
+  <div><span class="eyebrow">PROJECT OVERVIEW</span><h2>Olympic insights,<br>made interactive.</h2></div>
+  <p>Use the dashboard to explore the visualizations and interact with the published Tableau workbook. Open the story page to view the Tableau Story when its published link is configured.</p>
+</section>
+<section class="feature-grid">
+  <a class="feature-card" href="{{ url_for('dashboard') }}"><span class="feature-number">01</span><span class="feature-icon">▦</span><h3>Dashboard</h3><p>Explore charts and data visualizations in the embedded Tableau dashboard.</p><span class="card-link">Open dashboard ↗</span></a>
+  <a class="feature-card" href="{{ url_for('story') }}"><span class="feature-number">02</span><span class="feature-icon">◷</span><h3>Story</h3><p>Follow a narrative built from Olympic data and visual insights.</p><span class="card-link">Open story ↗</span></a>
+  <a class="feature-card" href="{{ tableau_profile_url }}" target="_blank" rel="noopener noreferrer"><span class="feature-number">03</span><span class="feature-icon">↗</span><h3>Tableau Public</h3><p>Visit the published workbook on Tableau Public.</p><span class="card-link">Visit Tableau ↗</span></a>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | Olympics Dashboard{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div><span class="eyebrow">INTERACTIVE ANALYTICS</span><h1>Olympics Dashboard</h1><p>Explore the published Tableau visualization below.</p></div>
+  <a class="button button-secondary" href="{{ dashboard_url }}" target="_blank" rel="noopener noreferrer">Open in Tableau ↗</a>
+</section>
+<section class="viz-shell">
+  <div class="viz-topline"><span class="live-dot"></span><span>Tableau Public · Embedded dashboard</span><a href="{{ dashboard_url }}" target="_blank" rel="noopener noreferrer">Open original ↗</a></div>
+  <div class="viz-frame">
+    <tableau-viz id="olympicsDashboard" src="{{ dashboard_url }}" toolbar="bottom" hide-tabs width="100%" height="100%" />
+  </div>
+</section>
+{% endblock %}

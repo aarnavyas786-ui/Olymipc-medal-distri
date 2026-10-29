@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Smart Bridge Olympics Dashboard — interactive Olympic data insights.">
+  <title>{% block title %}Olympics Dashboard | Smart Bridge{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('index') }}" aria-label="Olympics Dashboard home">
+      <span class="brand-mark">O</span>
+      <span>OLYMPICS<span class="brand-sub">SMART BRIDGE DATA PROJECT</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">Overview</a>
+      <a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Dashboard</a>
+      <a href="{{ url_for('story') }}" class="{% if request.endpoint == 'story' %}active{% endif %}">Story</a>
+      <a href="{{ tableau_profile_url }}" target="_blank" rel="noopener noreferrer" class="nav-external">Tableau Public ↗</a>
+    </nav>
+  </header>
+
+
+  <main>{% block content %}{% endblock %}</main>
+
+
+  <footer class="site-footer">
+    <span>Smart Bridge · Olympics Data Visualization</span>
+    <a href="{{ tableau_profile_url }}" target="_blank" rel="noopener noreferrer">View Tableau Public profile ↗</a>
+  </footer>
+</body>
+</html>
